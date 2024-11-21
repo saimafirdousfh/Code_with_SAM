@@ -1,0 +1,146 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+#include <vector>
+
+bool search2D(int arr[][4],int rowsize,int colsize,int  target){
+ for(int i=0;i<rowsize;i++){
+   for(int j =0;j<colsize;j++){
+     if(arr[i][i]==target){
+       return true;
+     }
+   }
+ }
+  //array traverse ho chuki 
+  //element not found 
+  //return false
+  return false;
+}
+
+int main(){
+  //serching in 2D array by using function
+  // int arr[3][4] ={{10,30,71,20},
+  //                 {88,40,60,90},    
+  //                 {30,50,69,70}};  
+  // int rowsize = 3;
+  // int colsize = 4;
+  // int target = 79;
+  // bool ans = search2D(arr,  rowsize, colsize, target);
+  // cout<<"Asn is : "<<ans;
+  
+
+  //2D Arrayyyyy
+// int row,col;
+  
+  //int arr[row][col];
+  //int a[3][2] = {{10,20},{30,40},{50,60}};
+  // i -> row index  j -> colm index
+ // int a[3][3]= {{10,20,30},{40,50,500},{60,70,80}};
+  //we have to put braces because in this compiler its not allowed to have element directly without defining colm wise
+  
+  // for(int i=0;i<3;i++){
+  //   for(int j=0; j<3;j++){
+  //     cout<<a[i][j]<<" ";
+  //   }
+  //   cout<<endl;
+  // } 
+
+  // int rowSize = 3;
+  // int colSize = 3;
+  // cout<<endl;
+
+  //cout<<"Column wise printing "<<endl;
+
+ // cout<<endl;
+  //only work in case of square matrix
+  
+  // for(int i = 0; i<3;i++){
+  //   for(int j = 0; j<3; j++){
+  //     cout<<a[j][i]<<" ";
+  //   }
+  //   cout<<endl;
+  // }
+//colm wise printing
+  // for(int j = 0; j<colSize;j++){
+  //   for(int i = 0; i<rowSize; i++){
+  //     cout<<a[i][j]<<" ";
+  //   }
+  //   cout<<endl;
+  // }
+
+  //printing diagonal elements -> only in sqaure matrix
+  // for(int i = 0;i<rowSize;i++){
+  //   for(int j = 0;j<colSize;j++){
+  //     if(i==j){
+  //       cout<<a[i][j]<<" ";
+  //     }
+  //   }cout<<endl;
+  //}
+
+  // for(int i = 0; i<rowsize;i++){
+  //  cout<<a[i][i]<<endl;
+  // }
+  // 
+
+  //input in 2D array
+  // int arr[2][3];
+  // int rowS=2;
+  // int colS = 3;
+  // for(int i =0;i<rowS;i++){
+  //   for(int j=0;j<colS;j++){
+  //     cout<<"Enter the value for "<<"["<<i<<"]"<<"["<<j<<"]"<<" ";
+  //     cin>>arr[i][j];
+  //   }
+  // }
+  // for(int i=0;i<rowS;i++){
+  //   for(int j=0; j<colS;j++){
+  //     cout<<arr[i][j]<<" ";
+  //   }
+  //   cout<<endl;
+  //} 
+
+ //  int arr[3][3] ={{10,30,71},
+ //                  {88,40,60},    
+ //                  {30,50,69}};  
+ //  int rowsize = 3;
+ //  int colsize = 3;
+ // for(int i=0;i<rowsize;i++){
+ //  cout<<arr[i][colsize-1]<<endl;
+ //   colsize--;
+ // }
+
+  //input by column wise 
+// int a[2][3];
+// int rowS=2;
+// int colS = 3;
+//   for(int i=0;i<colS;i++){
+//     for(int j=0;j<rowS;j++){
+//       cout<<"Enter the value of ["<<j<<"]"<<"["<<i<<"]"<<" ";
+//       cin>>a[j][i];
+//     }
+//   }
+//output by column wise
+//   for(int i=0;i<rowS;i++){
+//     for(int j=0;j<colS;j++)
+//       {
+//         cout<<a[i][j]<<" ";
+        
+//       }
+//     cout<<endl;
+  
+//   }
+  
+//2d array with vectors
+  
+vector<vector<int>>arr(4,vector<int>(3,0));
+
+  int rowSize = arr.size();
+  int colSize = arr[0].size();
+  for(int i=0;i<rowSize;i++){
+    for(int j=0;j<colSize;j++){
+      cin>>arr[i][j];
+    }
+  }
+  
+  }
+
