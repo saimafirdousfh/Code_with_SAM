@@ -1,0 +1,92 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+// we have to give col size, row size and target 
+
+// col was not specified earlier then it was giving error
+// bool search2DArray(int arr[][4], int rowSize, int colSize, int target){
+//  for(int i=0; i<rowSize; i++){
+//    for(int j=0; j<colSize; j++){
+//      if(arr[i][j]==target){
+//        return true;
+//      }
+//    }
+   
+//  }
+//   //target nhi mila all elements check kr liye
+//   //false ayega
+//   return false;
+  
+// }
+
+//colum must be given otherwise it will give error
+
+
+
+bool vectSearch2DArray(vector<vector<int>> arr, int target)
+{
+   int rowSize = arr.size();
+  int colSize = arr[0].size();
+  for(int i=0; i<rowSize; i++){
+     for(int j=0; j<colSize; j++){
+       if(arr[i][j]==target){
+         return true;
+       }
+     }
+
+   }
+  return false;
+  
+}
+//array is pass by reference
+
+int main()
+{
+//   cout << "Hello World!\n";
+//  int arr[3][4]= {{1,2,3,4},{5,6,7,8},{9,10,11,12}};
+
+// bool ans = search2DArray(arr, 3,4,17);
+// if(ans == true){
+//   cout<<"Target Found"<<endl;
+  
+// }
+// else cout<<"Target not found"<<endl;
+
+vector< vector <int> > arr (4, vector<int>(3,35));
+  int rowSize = arr.size();
+  int colSize = arr[0].size();
+cout<<"Enter the elements in 2D array"<<endl;
+cout<<"Row size = "<<rowSize<<"  col size = "<<colSize<<endl;
+
+  for( int i=0; i<rowSize; i++){
+    for(int j=0; j<colSize; j++){
+      cin>>arr[i][j];
+    }
+  }
+
+  for(int i=0; i<rowSize; i++){
+    for(int j=0; j<colSize; j++){
+      cout<<arr[i][j]<<" ";
+    }
+    cout<<endl;
+    
+  }
+
+  int target;
+  cout<<"Enter the target to check "<<endl;
+  cin>>target;
+
+  bool Ans = vectSearch2DArray(arr,target);
+  
+  if(Ans == true){
+    cout<<"Target Found"<<endl;
+
+  }
+  else cout<<"Target not found"<<endl;
+
+
+  
+ return 0;
+  
+}
