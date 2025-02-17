@@ -1,0 +1,215 @@
+#include <iostream>
+#include <vector>
+#include <math.h>
+#include <algorithm>
+#include <climits>
+
+
+using namespace std;
+// we have to give col size, row size and target 
+
+// col was not specified earlier then it was giving error
+// bool search2DArray(int arr[][4], int rowSize, int colSize, int target){
+//  for(int i=0; i<rowSize; i++){
+//    for(int j=0; j<colSize; j++){
+//      if(arr[i][j]==target){
+//        return true;
+//      }
+//    }
+   
+//  }
+//   //target nhi mila all elements check kr liye
+//   //false ayega
+//   return false;
+  
+// }
+
+//colum must be given otherwise it will give error
+// if we want to get min val then we will initialize the var with INT_Max value
+//and vice versa for max value initialize with INT_MIN
+
+int findMinIn2D(int arr[][4], int rowSize, int colSize){
+  int minVal = INT_MAX;
+
+  for(int i=0; i<rowSize; i++){
+    for(int j=0; j<colSize; j++){
+
+      minVal = min(minVal, arr[i][j]);
+    }
+  }
+  return minVal;
+}
+
+int findingMaxIn2D(int arr[][4], int rowSize, int colSize){
+  int maxVal = INT_MIN;
+  
+   for(int i=0;i<rowSize; i++){
+     for(int j=0; j<colSize; j++){
+      maxVal = max(maxVal, arr[i][j]);
+       
+     }
+   }
+
+  return maxVal;
+}
+
+
+void rowSum(int arr[][4], int rowSize, int colSize){
+  for(int i=0; i< rowSize; i++){
+    //har row ke liye sum zero hona chahiye
+    int sum = 0;
+    for(int j=0; j<colSize; j++){
+      sum = sum + arr[i][j];
+    }
+    cout<<sum<<endl;
+  }
+  
+}
+
+
+void colSum(int arr[][4], int rowSize, int colSize){
+for(int i=0; i<colSize; i++){
+  int sum = 0;
+  for( int j=0; j<rowSize; j++){
+    sum = sum + arr[j][i];
+    
+  }
+  cout<<sum<<endl;
+}
+}
+
+void diagonalSum(int arr[][3], int rowSize, int colSize){
+
+   int sum = 0;
+  for(int i=0; i<rowSize; i++){
+   
+    sum = sum + arr[i][i];
+    
+  }
+  cout<<sum<<endl;
+}
+
+void transpose(int arr[][3], int rowSize, int colSize){
+ int ans[100][100] = {{0}};
+  for(int i = 0; i < rowSize; i++){
+
+    for(int j=0; j<colSize; j++){
+
+      ans[i][j] = arr[j][i];
+      
+    }
+  }
+
+  for (int i=0; i<rowSize; i++){
+    for(int j=0; j<colSize; j++){
+      cout<<ans[i][j]<<" ";
+    }
+  cout<<endl;
+  }
+  
+
+  
+}
+
+
+
+
+
+// bool vectSearch2DArray(vector<vector<int>> arr, int target)
+// {
+//    int rowSize = arr.size();
+//   int colSize = arr[0].size();
+//   for(int i=0; i<rowSize; i++){
+//      for(int j=0; j<colSize; j++){
+//        if(arr[i][j]==target){
+//          return true;
+//        }
+//      }
+
+//    }
+//   return false;
+  
+// }
+//array is pass by reference
+
+int main()
+{
+ //cout << "Hello World!\n";
+ int arr[3][4]= {
+   {10,2,300,4},
+  {50,60,70,80},
+  {90,10,10,20}};
+
+int sqArr[3][3] = {{10, 20,30},
+  {40,50,60},
+  {70,80,90}};
+  int minAns = findMinIn2D(arr, 3, 4);
+  cout << "Min value is: " << minAns << endl;
+
+
+  int maxAns = findingMaxIn2D(arr,3,4);
+  cout<<"Max Value is "<<maxAns;
+ cout<<endl;
+
+cout<<"ROw Sum "<<endl;
+  
+rowSum(arr,3,4);
+
+
+  cout<<"Column Sum "<<endl;
+
+colSum(arr,3,4);
+
+
+  cout<<"Diagonal Sum "<<endl;
+
+diagonalSum(sqArr,3,3);
+
+
+  cout<<"Transpose "<<endl;
+
+transpose(sqArr,3,3);
+//bool ans = search2DArray(arr, 3,4,17);
+// if(ans == true){
+//   cout<<"Target Found"<<endl;
+  
+// }
+// else cout<<"Target not found"<<endl;
+
+// vector< vector <int> > arr (4, vector<int>(3,35));
+//   int rowSize = arr.size();
+//   int colSize = arr[0].size();
+// cout<<"Enter the elements in 2D array"<<endl;
+// cout<<"Row size = "<<rowSize<<"  col size = "<<colSize<<endl;
+
+//   for( int i=0; i<rowSize; i++){
+//     for(int j=0; j<colSize; j++){
+//       cin>>arr[i][j];
+//     }
+//   }
+
+//   for(int i=0; i<rowSize; i++){
+//     for(int j=0; j<colSize; j++){
+//       cout<<arr[i][j]<<" ";
+//     }
+//     cout<<endl;
+    
+//   }
+
+  // int target;
+  // cout<<"Enter the target to check "<<endl;
+  // cin>>target;
+
+  // bool Ans = vectSearch2DArray(arr,target);
+  
+  // if(Ans == true){
+  //   cout<<"Target Found"<<endl;
+
+  // }
+  // else cout<<"Target not found"<<endl;
+
+
+  
+ return 0;
+  
+}
